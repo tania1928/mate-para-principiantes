@@ -1,2 +1,441 @@
-# mate-para-principiantes
-aprende algebra. calculo 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulos de Matemáticas - Primer Año Universitario</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .module-card { transition: all 0.3s ease; }
+        .module-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .activity-completed { background-color: #f0fdf4; border-color: #22c55e; }
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="max-w-6xl mx-auto p-6">
+        <!-- Header -->
+        <div class="mb-8 text-center">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">
+                📚 Módulos de Matemáticas - Primer Año Universitario
+            </h1>
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                Sistema de aprendizaje estructurado para desarrollar las competencias matemáticas fundamentales 
+                necesarias en el primer año de estudios universitarios.
+            </p>
+        </div>
+
+        <!-- Modules Container -->
+        <div id="modules-container" class="space-y-6">
+            <!-- Module 1: Álgebra -->
+            <div class="module-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="cursor-pointer p-6 hover:bg-gray-50 transition-colors" onclick="toggleModule(1)">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">1</div>
+                            <div>
+                                <h2 class="text-xl font-semibold text-gray-800">Álgebra Fundamental</h2>
+                                <p class="text-gray-600 text-sm mt-1">Fundamentos algebraicos esenciales para el éxito universitario</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="text-right text-sm text-gray-500">
+                                <div class="flex items-center space-x-2 mb-1">
+                                    <span>⏱️ 4-5 semanas</span>
+                                </div>
+                                <span class="px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">Básico</span>
+                            </div>
+                            <span id="chevron-1" class="text-gray-400">▶️</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="module-1" class="hidden border-t border-gray-200 p-6 bg-gray-50 fade-in">
+                    <div class="grid lg:grid-cols-2 gap-6">
+                        <!-- Objetivos -->
+                        <div class="bg-white rounded-lg p-4">
+                            <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
+                                🎯 Objetivos de Aprendizaje
+                            </h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2">✅</span>
+                                    <span class="text-sm text-gray-700">Dominar operaciones con polinomios y factorización</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2">✅</span>
+                                    <span class="text-sm text-gray-700">Resolver ecuaciones y sistemas de ecuaciones lineales</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2">✅</span>
+                                    <span class="text-sm text-gray-700">Trabajar con funciones lineales y cuadráticas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2">✅</span>
+                                    <span class="text-sm text-gray-700">Aplicar propiedades de exponentes y logaritmos</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Contenidos -->
+                        <div class="bg-white rounded-lg p-4">
+                            <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
+                                📖 Contenidos Temáticos
+                            </h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-purple-300 rounded-full mr-3"></div>
+                                    <span class="text-sm text-gray-700">Operaciones algebraicas básicas</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-purple-300 rounded-full mr-3"></div>
+                                    <span class="text-sm text-gray-700">Factorización y productos notables</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-purple-300 rounded-full mr-3"></div>
+                                    <span class="text-sm text-gray-700">Ecuaciones lineales y cuadráticas</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-purple-300 rounded-full mr-3"></div>
+                                    <span class="text-sm text-gray-700">Sistemas de ecuaciones</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-purple-300 rounded-full mr-3"></div>
+                                    <span class="text-sm text-gray-700">Funciones y gráficas</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-purple-300 rounded-full mr-3"></div>
+                                    <span class="text-sm text-gray-700">Exponentes y logaritmos</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Ejemplo Resuelto -->
+                    <div class="mt-6 bg-white rounded-lg p-4">
+                        <h3 class="font-semibold text-gray-800 mb-4 flex items-center">
+                            📚 Recursos Complementarios
+                        </h3>
+                        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 mb-4">
+                            <h4 class="font-medium text-gray-800 mb-3">📚 Ejemplo Resuelto Paso a Paso</h4>
+                            <div class="text-sm">
+                                <p class="font-medium text-blue-800 mb-2">Problema: Factorizar x² - 5x + 6</p>
+                                <div class="space-y-2 text-gray-700 bg-white p-3 rounded border-l-4 border-blue-400">
+                                    <p><strong>Paso 1:</strong> Identificar que es un trinomio de la forma ax² + bx + c donde a=1, b=-5, c=6</p>
+                                    <p><strong>Paso 2:</strong> Buscar dos números que multiplicados den 6 y sumados den -5</p>
+                                    <p><strong>Paso 3:</strong> Los números son -2 y -3 porque (-2)×(-3) = 6 y (-2)+(-3) = -5</p>
+                                    <p><strong>Paso 4:</strong> Escribir la factorización: x² - 5x + 6 = (x - 2)(x - 3)</p>
+                                    <p><strong>Verificación:</strong> (x - 2)(x - 3) = x² - 3x - 2x + 6 = x² - 5x + 6 ✓</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Guía de Estudio -->
+                        <div class="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-lg p-4 mb-4">
+                            <h4 class="font-medium text-gray-800 mb-3">📋 Guía de Estudio Resumida</h4>
+                            <div class="text-xs space-y-3">
+                                <div class="bg-white p-3 rounded border-l-4 border-yellow-400">
+                                    <h5 class="font-semibold text-yellow-800 mb-2">🔑 Conceptos Clave</h5>
+                                    <div class="grid md:grid-cols-2 gap-2 text-gray-700">
+                                        <div>• Productos notables: (a±b)² = a² ± 2ab + b²</div>
+                                        <div>• Diferencia de cuadrados: a² - b² = (a+b)(a-b)</div>
+                                        <div>• Factorización por agrupación</div>
+                                        <div>• Método de completar el cuadrado</div>
+                                    </div>
+                                </div>
+                                <div class="bg-white p-3 rounded border-l-4 border-blue-400">
+                                    <h5 class="font-semibold text-blue-800 mb-2">📐 Fórmulas Esenciales</h5>
+                                    <div class="font-mono text-xs space-y-1 text-gray-700">
+                                        <div>• Ecuación cuadrática: x = [-b ± √(b²-4ac)] / 2a</div>
+                                        <div>• Discriminante: Δ = b² - 4ac</div>
+                                        <div>• Función lineal: y = mx + b</div>
+                                        <div>• Logaritmos: log(ab) = log(a) + log(b)</div>
+                                    </div>
+                                </div>
+                                <div class="bg-white p-3 rounded border-l-4 border-green-400">
+                                    <h5 class="font-semibold text-green-800 mb-2">💡 Estrategias de Resolución</h5>
+                                    <div class="text-gray-700 space-y-1">
+                                        <div>1. Identificar el tipo de problema (lineal, cuadrático, exponencial)</div>
+                                        <div>2. Aplicar operaciones inversas sistemáticamente</div>
+                                        <div>3. Verificar siempre la solución sustituyendo</div>
+                                        <div>4. Graficar cuando sea posible para visualizar</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actividades -->
+                    <div class="mt-6 bg-white rounded-lg p-4">
+                        <h3 class="font-semibold text-gray-800 mb-4 flex items-center">
+                            ▶️ Actividades de Aprendizaje
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-3">
+                            <div class="activity p-3 rounded-lg border-2 border-gray-200 bg-white hover:border-gray-300 cursor-pointer transition-all" onclick="toggleActivity(this)">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">Diagnóstico</span>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-xs text-gray-500">⏱️ 30 min</span>
+                                        <span class="activity-check hidden text-green-500">✅</span>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-700 font-medium">Evaluación inicial de conocimientos</p>
+                            </div>
+                            <div class="activity p-3 rounded-lg border-2 border-gray-200 bg-white hover:border-gray-300 cursor-pointer transition-all" onclick="toggleActivity(this)">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Práctica</span>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-xs text-gray-500">⏱️ 45 min</span>
+                                        <span class="activity-check hidden text-green-500">✅</span>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-700 font-medium">Ejercicios de factorización guiados</p>
+                            </div>
+                            <div class="activity p-3 rounded-lg border-2 border-gray-200 bg-white hover:border-gray-300 cursor-pointer transition-all" onclick="toggleActivity(this)">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800">Aplicación</span>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-xs text-gray-500">⏱️ 60 min</span>
+                                        <span class="activity-check hidden text-green-500">✅</span>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-700 font-medium">Resolución de problemas contextualizados</p>
+                            </div>
+                            <div class="activity p-3 rounded-lg border-2 border-gray-200 bg-white hover:border-gray-300 cursor-pointer transition-all" onclick="toggleActivity(this)">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">Evaluación</span>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-xs text-gray-500">⏱️ 40 min</span>
+                                        <span class="activity-check hidden text-green-500">✅</span>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-700 font-medium">Quiz módulo 1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 2: Cálculo -->
+            <div class="module-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="cursor-pointer p-6 hover:bg-gray-50 transition-colors" onclick="toggleModule(2)">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">2</div>
+                            <div>
+                                <h2 class="text-xl font-semibold text-gray-800">Cálculo Diferencial</h2>
+                                <p class="text-gray-600 text-sm mt-1">Introducción a límites, derivadas y sus aplicaciones</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="text-right text-sm text-gray-500">
+                                <div class="flex items-center space-x-2 mb-1">
+                                    <span>⏱️ 6-7 semanas</span>
+                                </div>
+                                <span class="px-2 py-1 rounded-full text-xs bg-yellow-100 text-yellow-800">Intermedio</span>
+                            </div>
+                            <span id="chevron-2" class="text-gray-400">▶️</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="module-2" class="hidden border-t border-gray-200 p-6 bg-gray-50 fade-in">
+                    <div class="grid lg:grid-cols-2 gap-6">
+                        <!-- Objetivos -->
+                        <div class="bg-white rounded-lg p-4">
+                            <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
+                                🎯 Objetivos de Aprendizaje
+                            </h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2">✅</span>
+                                    <span class="text-sm text-gray-700">Comprender el concepto de límite y continuidad</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2">✅</span>
+                                    <span class="text-sm text-gray-700">Calcular derivadas usando reglas de derivación</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2">✅</span>
+                                    <span class="text-sm text-gray-700">Aplicar derivadas para analizar funciones</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2">✅</span>
+                                    <span class="text-sm text-gray-700">Resolver problemas de optimización básicos</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Contenidos -->
+                        <div class="bg-white rounded-lg p-4">
+                            <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
+                                📖 Contenidos Temáticos
+                            </h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-purple-300 rounded-full mr-3"></div>
+                                    <span class="text-sm text-gray-700">Límites y continuidad</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-purple-300 rounded-full mr-3"></div>
+                                    <span class="text-sm text-gray-700">Definición de derivada</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-purple-300 rounded-full mr-3"></div>
+                                    <span class="text-sm text-gray-700">Reglas de derivación</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-purple-300 rounded-full mr-3"></div>
+                                    <span class="text-sm text-gray-700">Derivada de funciones compuestas</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-purple-300 rounded-full mr-3"></div>
+                                    <span class="text-sm text-gray-700">Aplicaciones de la derivada</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-purple-300 rounded-full mr-3"></div>
+                                    <span class="text-sm text-gray-700">Problemas de optimización</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Ejemplo Resuelto -->
+                    <div class="mt-6 bg-white rounded-lg p-4">
+                        <h3 class="font-semibold text-gray-800 mb-4 flex items-center">
+                            📚 Recursos Complementarios
+                        </h3>
+                        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 mb-4">
+                            <h4 class="font-medium text-gray-800 mb-3">📚 Ejemplo Resuelto Paso a Paso</h4>
+                            <div class="text-sm">
+                                <p class="font-medium text-green-800 mb-2">Problema: Calcular la derivada de f(x) = 3x² - 2x + 1</p>
+                                <div class="space-y-2 text-gray-700 bg-white p-3 rounded border-l-4 border-green-400">
+                                    <p><strong>Paso 1:</strong> Aplicar la regla de derivación término por término</p>
+                                    <p><strong>Paso 2:</strong> d/dx(3x²) = 3 × 2x¹ = 6x (regla de la potencia)</p>
+                                    <p><strong>Paso 3:</strong> d/dx(-2x) = -2 × 1 = -2 (derivada de función lineal)</p>
+                                    <p><strong>Paso 4:</strong> d/dx(1) = 0 (derivada de constante es cero)</p>
+                                    <p><strong>Resultado:</strong> f'(x) = 6x - 2</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Guía de Estudio -->
+                        <div class="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-lg p-4 mb-4">
+                            <h4 class="font-medium text-gray-800 mb-3">📋 Guía de Estudio Resumida</h4>
+                            <div class="text-xs space-y-3">
+                                <div class="bg-white p-3 rounded border-l-4 border-yellow-400">
+                                    <h5 class="font-semibold text-yellow-800 mb-2">🔑 Conceptos Clave</h5>
+                                    <div class="grid md:grid-cols-2 gap-2 text-gray-700">
+                                        <div>• Límite: comportamiento cerca de un punto</div>
+                                        <div>• Continuidad: sin "saltos" en la función</div>
+                                        <div>• Derivada: razón de cambio instantánea</div>
+                                        <div>• Regla de la cadena para funciones compuestas</div>
+                                    </div>
+                                </div>
+                                <div class="bg-white p-3 rounded border-l-4 border-blue-400">
+                                    <h5 class="font-semibold text-blue-800 mb-2">📐 Reglas de Derivación</h5>
+                                    <div class="font-mono text-xs space-y-1 text-gray-700">
+                                        <div>• Potencia: d/dx(xⁿ) = nxⁿ⁻¹</div>
+                                        <div>• Producto: d/dx(uv) = u'v + uv'</div>
+                                        <div>• Cociente: d/dx(u/v) = (u'v - uv')/v²</div>
+                                        <div>• Cadena: d/dx[f(g(x))] = f'(g(x))·g'(x)</div>
+                                    </div>
+                                </div>
+                                <div class="bg-white p-3 rounded border-l-4 border-green-400">
+                                    <h5 class="font-semibold text-green-800 mb-2">💡 Estrategias de Resolución</h5>
+                                    <div class="text-gray-700 space-y-1">
+                                        <div>1. Para límites: factorizar, racionalizar o L'Hôpital</div>
+                                        <div>2. Para derivadas: identificar la regla aplicable</div>
+                                        <div>3. Para optimización: f'(x) = 0 y analizar f''(x)</div>
+                                        <div>4. Siempre interpretar el resultado en contexto</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recomendaciones -->
+        <div class="mt-8 bg-white rounded-lg p-6 shadow-lg">
+            <h3 class="font-semibold text-gray-800 mb-4 flex items-center">
+                👥 Recomendaciones Metodológicas
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6 text-sm text-gray-700">
+                <div>
+                    <h4 class="font-medium mb-2">Estrategias de Enseñanza:</h4>
+                    <ul class="space-y-1 ml-4">
+                        <li>• Aprendizaje activo con resolución de problemas</li>
+                        <li>• Uso de tecnología educativa (GeoGebra, calculadoras gráficas)</li>
+                        <li>• Trabajo colaborativo en pequeños grupos</li>
+                        <li>• Conexión con aplicaciones reales</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-2">Evaluación:</h4>
+                    <ul class="space-y-1 ml-4">
+                        <li>• 40% Evaluaciones parciales</li>
+                        <li>• 30% Proyectos y aplicaciones</li>
+                        <li>• 20% Participación y práctica</li>
+                        <li>• 10% Autoevaluación y reflexión</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-8 text-center text-gray-500 text-sm">
+            <p>Sistema de Módulos de Matemáticas - Primer Año Universitario</p>
+            <p>Diseñado para el aprendizaje efectivo y progresivo</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleModule(moduleId) {
+            const module = document.getElementById(`module-${moduleId}`);
+            const chevron = document.getElementById(`chevron-${moduleId}`);
+            
+            if (module.classList.contains('hidden')) {
+                module.classList.remove('hidden');
+                chevron.textContent = '🔽';
+            } else {
+                module.classList.add('hidden');
+                chevron.textContent = '▶️';
+            }
+        }
+
+        function toggleActivity(element) {
+            const check = element.querySelector('.activity-check');
+            
+            if (element.classList.contains('activity-completed')) {
+                element.classList.remove('activity-completed');
+                element.classList.add('border-gray-200', 'bg-white');
+                element.classList.remove('border-green-300', 'bg-green-50');
+                check.classList.add('hidden');
+            } else {
+                element.classList.add('activity-completed');
+                element.classList.remove('border-gray-200', 'bg-white');
+                element.classList.add('border-green-300', 'bg-green-50');
+                check.classList.remove('hidden');
+            }
+        }
+
+        // Smooth scroll animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.module-card').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
